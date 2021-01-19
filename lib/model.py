@@ -17,7 +17,8 @@ class ForecastRNN(nn.Module):
         self.rnn = nn.GRU(input_size=input_dim,
                           hidden_size=hidden_size,
                           num_layers=depth,
-                          dropout=False,
+                          #dropout=False,
+                          dropout=0,
                           bidirectional=False,  # would bidirectional help forecasting?
                           batch_first=True)
         self.sm = nn.LogSoftmax(dim=1)
